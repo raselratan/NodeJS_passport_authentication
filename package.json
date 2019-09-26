@@ -1,0 +1,39 @@
+{
+  "name": "nodeauth",
+  "version": "1.0.0",
+  "description": "node with JWT Authentication and registration",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "jwt",
+    "login",
+    "register"
+  ],
+  "author": "Rasel Mahmud Ratan",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.2",
+    "jquery": "^3.4.1",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.44.3",
+    "tether": "^1.4.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

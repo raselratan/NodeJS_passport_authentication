@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="=UTF-8">
+<title>ExpressJS CRUD</title>
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+<script src="/js/jquery.min.js"></script>
+<script src="/js/tether.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>
+    <body>
+
+<div class="card bg-light">
+    <article class="card-body mx-auto">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <% if(typeof errors != 'undefined'){ %> <% errors.forEach(function(error) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= error.msg %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <% }); %> <% } %> 
+        <form method="POST" action="http://localhost:3000/user/register">
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input name="name" value="<%= typeof name != 'undefined' ? name : '' %>" class="form-control" placeholder="Full name" type="text">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input name="email" value="<%= typeof email != 'undefined' ? email : '' %>" class="form-control" placeholder="Email address" type="email">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+                <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                     </div>
+            <input name="mobile" value="<%= typeof mobile != 'undefined' ? mobile : '' %>" class="form-control" placeholder="Phone number" type="text">
+        </div> <!-- form-group// -->
+
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input name="password" value="<%= typeof password != 'undefined' ? password : '' %>" class="form-control" placeholder="Create password" type="password">
+        </div> <!-- form-group// -->
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>" class="form-control" placeholder="Repeat password" type="password">
+        </div> <!-- form-group// -->                                      
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+        </div> <!-- form-group// -->      
+        <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    </form>
+    </article>
+    </div> <!-- card.// -->
+    
+    </div> 
+    </body>
+</html>
