@@ -5,6 +5,18 @@ const bcrypt = require('bcryptjs');
 const UserModel = require('../models/UserModel')
 usersRoute.use(cors())
 
+
+const passport = require('passport');
+const { forwardAuthenticated } = require('../config/auth');
+
+
+// Login Page
+usersRoute.get('/user/login', forwardAuthenticated, (req, res) => res.render('login'));
+
+// Register Page
+usersRoute.get('/user/register', forwardAuthenticated, (req, res) => res.render('register'));
+
+// Register Start
 usersRoute.get('/register', (req, res) => {
     res.render('register') 
 })
@@ -83,6 +95,35 @@ usersRoute.post('/register',(req,res)=>{
       }
     })
   }
+});
+
+// Register End
+
+// Login Start
+
+// Login
+
+usersRoute.get('/login',(req,res)=>{
+  res.render('login')
+})
+
+usersRoute.post('/login', (req, res, next) => {
+  passport.authenticate('local', {
+    successRedirect: '/dashboard',
+    failureRedirect: '/user/login',
+    failureFlash: true
+  })(req, res, next);
+});
+
+// Login End
+
+
+// logout
+
+usersRoute.get('/logout', (req, res) => {
+  req.logout();
+  req.flash('success_msg', 'You are logged out');
+  res.redirect('/user/login');
 });
 
 module.exports = usersRoute
