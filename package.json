@@ -31,7 +31,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "save": "^2.4.0",
-    "sequelize": "^4.44.3",
+    "sequelize": "^5.15.1",
     "tether": "^1.4.7"
   },
   "devDependencies": {
