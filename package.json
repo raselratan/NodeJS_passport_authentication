@@ -22,7 +22,7 @@
     "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
     "ejs": "^2.7.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.16.2",
     "jquery": "^3.4.1",
